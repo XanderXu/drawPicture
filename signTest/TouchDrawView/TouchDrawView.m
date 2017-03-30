@@ -31,6 +31,18 @@
     }
     return self;
 }
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        linesCompleted = [[NSMutableArray alloc] init];
+        [self setMultipleTouchEnabled:YES];
+        
+        drawColor = [UIColor blackColor];
+        [self becomeFirstResponder];
+    }
+    return self;
+}
 
 //  It is a method of UIView called every time the screen needs a redisplay or refresh.
 - (void)drawRect:(CGRect)rect
@@ -185,13 +197,5 @@
     [self becomeFirstResponder];
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
 
 @end
